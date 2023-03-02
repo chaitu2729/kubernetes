@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: result-app-service
+  labels: 
+    name: result-app
+    author: cahitanya
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30009
+  selector: 
+      name: resultapp
+
+
+...        
+
+

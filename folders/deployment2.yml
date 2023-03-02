@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mysql-dp
+   labels:
+     type: db
+     author: chaitanya
+spec: 
+  replicas: 2
+  selector:
+     matchLabels:
+        type: db
+  template: 
+    metadata:
+      name: mysql-dp
+      labels:
+        type: db
+        author: chaitanya
+    spec:
+      containers:
+        - name: mydb
+          image: mysql:5
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: intelliqit 

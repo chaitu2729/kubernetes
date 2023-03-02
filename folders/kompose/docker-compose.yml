@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+    mydb:
+      image: mysql:5
+      environment:
+        MYSQL-ROOT-PASSWORD: intelliqit
+      deploy:
+         replicas: 2
+    mywordpres:
+      image: wordpress
+      ports: 
+        - 8080:80
+      deploy:
+        replicas: 3  
